@@ -1,0 +1,24 @@
+<div class="btn-group"> 
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="material-icons"> shopping_cart </i>
+       {{totalCartItemPriceNumber | currency:'USD':true}} - {{totalCartItemNumber}}
+
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <button *ngFor="let item of cartItem" class="dropdown-item" type="button">
+      <b>{{item.product.productName}}  - ({{item.quantity}})</b>
+    </button>
+    <div *ngIf="this.isButtonVisible">
+
+      <button (click)="deleteAllCartFromBasket()" type="button" class="btn btn-danger">Remove All Items
+      <i class="material-icons">remove_shopping_cart</i>
+      </button>
+    </div>
+     
+
+
+
+
+  </div>
+</div>  
+
